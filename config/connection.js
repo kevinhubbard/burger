@@ -1,3 +1,4 @@
+//require connection credentials to local database
 var mysql = require('mysql');
 var connection = mysql.createConnection({
 	host: 'localhost',
@@ -7,6 +8,7 @@ var connection = mysql.createConnection({
 
 });
 
+//establishing connection to burgers_db
 connection.connect(function(err){
 	if (err){
 		console.error('error connecting: ' + err.stack);
@@ -14,5 +16,6 @@ connection.connect(function(err){
 	}
 	console.log('connected as id: ' + connection.threadId);
 })
+
 
 module.exports = connection;
